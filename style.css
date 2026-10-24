@@ -1,0 +1,374 @@
+/* ==========================================================================
+   Three O'Clock | Bhilai — Link Page Redesign for SoberStuds
+   ========================================================================== */
+
+:root {
+  --color-page-bg: #372229;
+  --color-card-bg-top: #2b0e18;
+  --color-card-bg-bottom: #1f0912;
+  --color-card-fallback: #260C15;
+  --color-button-bg: #76505B;
+  --color-button-hover: #835b67;
+  --color-button-active: #6e4752;
+  --color-text-white: #ffffff;
+  --color-text-muted: #e8d8dc;
+  --color-text-subtle: #c7b6bb;
+  --color-border-subtle: rgba(255, 255, 255, 0.12);
+  
+  --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--color-page-bg);
+  font-family: var(--font-family);
+  color: var(--color-text-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Page Layout Container */
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 36px 16px;
+  background-color: var(--color-page-bg);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Center Mobile-Style Profile Card (~545px on Desktop) */
+.profile-card {
+  width: 100%;
+  max-width: 545px;
+  background: var(--color-card-fallback);
+  background: linear-gradient(180deg, var(--color-card-bg-top) 0%, var(--color-card-bg-bottom) 100%);
+  border-radius: 28px;
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.45);
+  padding: 36px 28px 32px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   Profile Section: Perfectly Centered Avatar, Title, Description
+   -------------------------------------------------------------------------- */
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* 90px x 90px Circular Avatar with dead-center teapot dashed circle */
+.profile-avatar-wrapper {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  flex-shrink: 0;
+}
+
+/* 
+   threelogo.jpeg is 564x491. Dashed circle center is cx=265 (46.98%), cy=244.5 (49.80%).
+   With object-position: 27% 50%, the dashed circle is mathematically and visually dead-center.
+*/
+.profile-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 27% 50%;
+  display: block;
+}
+
+/* Profile Title */
+.profile-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text-white);
+  letter-spacing: -0.2px;
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+
+/* Description preserving exact text & wrap */
+.profile-description {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  line-height: 1.45;
+  max-width: 440px;
+  margin: 0 auto 16px;
+  word-break: break-word;
+}
+
+.desktop-br {
+  display: block;
+}
+
+/* Instagram Outline Icon Centered Under Description */
+.instagram-outline-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-white);
+  opacity: 0.95;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  margin-bottom: 8px;
+}
+
+.instagram-outline-link:hover {
+  opacity: 1;
+  transform: scale(1.12);
+}
+
+/* --------------------------------------------------------------------------
+   Links Section: Three Pill-Shaped Link Buttons
+   -------------------------------------------------------------------------- */
+.links-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.link-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 58px;
+  background-color: var(--color-button-bg);
+  border-radius: 9999px;
+  text-decoration: none;
+  padding: 6px 48px;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
+.link-button:hover {
+  background-color: var(--color-button-hover);
+  transform: translateY(-1.5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+}
+
+.link-button:active {
+  background-color: var(--color-button-active);
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Circular Icon on Left */
+.link-icon-container {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.22);
+}
+
+.link-icon-container.logo-circle {
+  background-color: #000000;
+}
+
+.link-icon-container.circle-white {
+  background-color: #ffffff;
+}
+
+.link-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Button 2 Teapot Logo perfectly centered */
+.link-icon.three-btn-logo {
+  object-fit: cover;
+  object-position: 27% 50%;
+}
+
+/* Button 3 Menu Logo */
+.link-icon.menu-btn-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 3px;
+  display: block;
+}
+
+/* Centered Link Title */
+.link-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-white);
+  text-align: center;
+  line-height: 1.25;
+  letter-spacing: -0.1px;
+}
+
+/* Vertical 3-dots on Right */
+.link-dots {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.55);
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Footer: Centered SoberStuds Whole Image Logo
+   -------------------------------------------------------------------------- */
+.card-footer {
+  margin-top: 44px;
+  padding-bottom: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.footer-brand-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-full-logo {
+  width: 140px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  opacity: 0.92;
+}
+
+.footer-full-logo:hover {
+  transform: scale(1.04);
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Design
+   -------------------------------------------------------------------------- */
+@media (max-width: 580px) {
+  .page-wrapper {
+    padding: 0;
+  }
+
+  .profile-card {
+    border-radius: 0;
+    min-height: 100vh;
+    padding: 28px 20px 32px;
+    box-shadow: none;
+  }
+
+  .desktop-br {
+    display: inline;
+  }
+
+  .profile-description {
+    font-size: 13.5px;
+    padding: 0 4px;
+  }
+
+  .link-button {
+    min-height: 54px;
+    padding: 6px 44px;
+  }
+
+  .link-icon-container {
+    width: 40px;
+    height: 40px;
+    left: 7px;
+  }
+
+  .link-text {
+    font-size: 14.5px;
+  }
+
+  .link-dots {
+    right: 14px;
+  }
+
+  .card-footer {
+    margin-top: 36px;
+  }
+
+  .footer-full-logo {
+    width: 130px;
+  }
+}
+
+@media (max-width: 400px) {
+  .profile-card {
+    padding: 24px 14px 28px;
+  }
+
+  .profile-title {
+    font-size: 18px;
+  }
+
+  .profile-description {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .link-button {
+    min-height: 50px;
+    padding: 6px 38px 6px 46px;
+  }
+
+  .link-icon-container {
+    width: 36px;
+    height: 36px;
+    left: 6px;
+  }
+
+  .link-text {
+    font-size: 13.5px;
+  }
+
+  .link-dots {
+    right: 12px;
+  }
+}

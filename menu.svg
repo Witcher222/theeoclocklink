@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" width="48" height="48" fill="none">
+  <!-- Circular container matching button background -->
+  <circle cx="27" cy="27" r="26" fill="#76505B" />
+  
+  <!-- Subtle circular border accents top and bottom -->
+  <path d="M 21 8 A 20 20 0 0 1 33 8" stroke="#260C15" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M 21 46 A 20 20 0 0 0 33 46" stroke="#260C15" stroke-width="2.2" stroke-linecap="round"/>
+
+  <!-- Spiral rings on left -->
+  <path d="M 17 17 C 15 17, 15 20, 17 20" stroke="#260C15" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M 17 23 C 15 23, 15 26, 17 26" stroke="#260C15" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M 17 29 C 15 29, 15 32, 17 32" stroke="#260C15" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M 17 35 C 15 35, 15 38, 17 38" stroke="#260C15" stroke-width="2.2" stroke-linecap="round"/>
+
+  <!-- Left spine line -->
+  <line x1="18.5" y1="14" x2="18.5" y2="40" stroke="#260C15" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- Right edge of booklet -->
+  <line x1="40" y1="16" x2="40" y2="38" stroke="#260C15" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Cloche dome -->
+  <path d="M 23 23 C 23 16, 35 16, 35 23 Z" stroke="#260C15" stroke-width="2" fill="none" stroke-linejoin="round"/>
+  <!-- Cloche handle -->
+  <circle cx="29" cy="15" r="1.5" fill="#260C15"/>
+  <!-- Cloche tray line -->
+  <line x1="21.5" y1="23.5" x2="36.5" y2="23.5" stroke="#260C15" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Divider line above MENU -->
+  <line x1="21" y1="28" x2="37" y2="28" stroke="#260C15" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- MENU text -->
+  <text x="29" y="34.5" text-anchor="middle" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-size="6.8" font-weight="900" letter-spacing="0.8px" fill="#260C15">MENU</text>
+
+  <!-- Divider line below MENU -->
+  <line x1="21" y1="37" x2="37" y2="37" stroke="#260C15" stroke-width="1.8" stroke-linecap="round"/>
+</svg>
